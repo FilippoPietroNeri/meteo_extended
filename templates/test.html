@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here if needed */
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mt-5 mb-4">Weather App</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="weatherForm">
+                <div class="form-group">
+                    <label for="cityInput">Enter City:</label>
+                    <input type="text" class="form-control" id="cityInput" placeholder="E.g., New York">
+                </div>
+                <button type="submit" class="btn btn-primary">Get Weather</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="weatherResult" class="mt-4" style="display: none;">
+        <div class="card">
+            <div class="card-body">
+                <h2 id="cityName" class="card-title"></h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p id="temperature" class="card-text"></p>
+                        <p id="description" class="card-text"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p id="humidity" class="card-text"></p>
+                        <p id="windSpeed" class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#weatherForm').submit(function (event) {
+            event.preventDefault();
+            var city = $('#cityInput').val();
+            getWeather(city);
+        });
+        
+        function getWeather(city) {
+            // You would use an API to get weather data here
+            // This is a placeholder function
+            // Replace this with actual API call to fetch weather data
+            
+            // For example:
+            // $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR_API_KEY')
+            // .done(function(response) {
+            //     // Handle response and update UI accordingly
+            // });
+
+            // For now, let's just show a sample result
+            var weatherData = {
+                cityName: city,
+                temperature: '25°C',
+                description: 'Sunny',
+                humidity: '50%',
+                windSpeed: '10 m/s'
+            };
+            updateUI(weatherData);
+        }
+
+        function updateUI(weatherData) {
+            $('#cityName').text(weatherData.cityName);
+            $('#temperature').text('Temperature: ' + weatherData.temperature);
+            $('#description').text('Description: ' + weatherData.description);
+            $('#humidity').text('Humidity: ' + weatherData.humidity);
+            $('#windSpeed').text('Wind Speed: ' + weatherData.windSpeed);
+            $('#weatherResult').show();
+        }
+    });
+</script>
+</body>
+</html>
