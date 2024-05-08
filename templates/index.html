@@ -9,7 +9,7 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <style>
     body {
-      background-image: url("{{url_for('static', filename='img/bg.jpg')}}");
+      background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
       background-size: cover;
     }
   </style>
@@ -18,20 +18,22 @@
 <body class="bg-light">
   <div class="container py-5" style="max-width: 500px;">
     <div class="text-center text-white">
+      <div id="alertbox" style="display: none;" class="alert alert-danger" role="alert">
+      </div>
       <h1 class="display-4">Little Meteo V2</h1>
       <p class="lead">Inserisci la città di cui vuoi visualizzare il meteo adesso</p>
     </div>
 
     <div class="mb-3">
-      <input type="text" placeholder="Inserisci la città" class="form-control rounded-pill input_text bg-dark bg-opacity-70 text-white">
+      <input type="text" placeholder="Inserisci la città" class="form-control rounded-pill input_text bg-dark bg-opacity-50 text-white">
       <div class="mt-3 d-grid">
         <button class="btn btn-primary rounded-pill submit" id="submitButton">Invia</button>
       </div>
     </div>
 
-    <div class="mt-5">
+    <div id="infobox" class="mt-5">
       <div class="card shadow-sm bg-dark text-white bg-opacity-50">
-        <div class="card-body">
+        <div class="card-body text-center">
           <img id="icon" alt="">
           <h2 class="card-title" id="name"></h2>
           <p class="card-text temp"></p>
@@ -40,6 +42,11 @@
           <p class="card-text humidity"></p>
           <p class="card-text wind"></p>
           <p class="card-text pressure"></p>
+          <br>
+          <div class="">
+            <button class="btn btn-primary">More info</button>
+            <button class="btn btn-primary" onclick="gotom()">See on Google Maps</button>
+          </div>
         </div>
       </div>
     </div>
