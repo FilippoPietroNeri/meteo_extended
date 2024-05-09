@@ -9,6 +9,6 @@ app = Flask(__name__)
 def homepage():
     return render_template('index.html')
 
-# Starta il webserverw
+# Starta il webserver
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3246, debug=True)

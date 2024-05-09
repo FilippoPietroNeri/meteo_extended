@@ -13,7 +13,7 @@ var pressure = document.querySelector('.pressure');
 var alertbox = document.querySelector('#alertbox');
 var infobox  = document.querySelector('#infobox');
 
-var currentLon, currentLat;
+var currentLon, currentLat; // dobbiamo salvare i dati per porteli vedere sulle altre funzioni
 
 function changeVisibility(tag, bool) // metodo per cambiare velocemente la visibilità dei tag usando lo style
 {
@@ -22,7 +22,6 @@ function changeVisibility(tag, bool) // metodo per cambiare velocemente la visib
 
 function gotom()
 {
-  // https://www.google.com/maps/@45.5093658,1.187804,14z?entry=ttu
   document.location.href = `https://www.google.com/maps/@${currentLat},${currentLon},14z`
 }
 
