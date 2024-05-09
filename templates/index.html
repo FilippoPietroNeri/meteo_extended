@@ -12,6 +12,32 @@
       background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
       background-size: cover;
     }
+
+    .lilist {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 2pt 4pt;
+      height: 40px;
+      border-radius: 4pt;
+    }
+
+    .ullist {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      margin: 0;
+      border-radius: 4pt;
+      height: 250px;
+    }
+
+    .list-values {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-basis: 60%;
+    }
   </style>
 </head>
 
@@ -25,12 +51,13 @@
     </div>
 
     <div class="mb-3">
-      <input type="text" placeholder="Inserisci la città" class="form-control rounded-pill input_text bg-dark bg-opacity-50 text-white">
+      <input type="text" placeholder="Inserisci la città"
+        class="form-control rounded-pill input_text bg-dark bg-opacity-50 text-white">
       <div class="mt-3 d-grid">
         <button class="btn btn-primary rounded-pill submit" id="submitButton">Invia</button>
       </div>
     </div>
-    
+
     <div id="infobox" class="mt-5">
       <div class="card shadow-sm bg-dark text-white bg-opacity-50">
         <div class="card-body text-center">
@@ -49,6 +76,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <br>
+    <div class="container py-5 shadow-sm bg-dark text-white bg-opacity-50 text-center" id="boxprev"
+      style="display: none;">
+      <h1 class="text-center lead">Previsioni nei prossimi 7 giorni</h1>
+      <ul class="ullist" id="previsions"></ul>
     </div>
   </div>
   <script src="{{url_for('static', filename='js/app.js')}}"></script>
