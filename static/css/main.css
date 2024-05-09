@@ -1,0 +1,30 @@
+body {
+    background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+    background-size:inherit;
+}
+
+.lilist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 2pt 4pt;
+    height: 40px;
+    border-radius: 4pt;
+}
+
+.ullist {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 4pt;
+    height: 250px;
+}
+
+.list-values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 60%;
+}
